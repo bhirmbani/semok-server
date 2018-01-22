@@ -7,8 +7,9 @@ module.exports = function (sequelize, DataTypes) {
     CategoryId: DataTypes.INTEGER,
     createdBy: DataTypes.STRING,
     freq: {
-      type: DataTypes.ENUM(1, 3, 12),
+      type: DataTypes.ENUM(1, 3, 12)
     },
+    year: DataTypes.INTEGER
   });
   Item.associate = function (models) {
     Item.belongsToMany(models.Worker, { through: 'WorkerItem', foreignKey: 'itemId', onDelete: 'cascade' });

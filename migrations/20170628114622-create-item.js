@@ -21,7 +21,10 @@ module.exports = {
         type: Sequelize.STRING
       },
       freq: {
-        type: Sequelize.ENUM(1, 3, 12),
+        type: Sequelize.ENUM(1, 3, 12)
+      },
+      year: {
+        type: Sequelize.INTEGER
       },
       createdAt: {
         allowNull: false,

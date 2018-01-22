@@ -111,16 +111,16 @@ methods.getWorkersWithoutAdmin = (req, res, next) => {
     models.Worker.findAll({
       where: {
         role: {
-          $not: 'admin',
-        },
+          $not: 'admin'
+        }
       },
-      attributes: [['name', 'text'], ['name', 'value']],
+      attributes: [['name', 'text'], ['name', 'value']]
       // { exclude: ['password', 'email', 'createdAt', 'updatedAt', 'role'] }
     })
-    .then((workers) => {
+    .then(workers => {
       const allItemValue = {
         text: 'semua',
-        value: 'semua',
+        value: 'semua'
       };
       workers.push(allItemValue);
       res.json({ ok: true, workers });
